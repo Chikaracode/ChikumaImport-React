@@ -1,0 +1,8 @@
+.contenCart{
+    position: relative;
+}
+
+.countCart{
+    position: absolute;
+    left: 23px;
+}
