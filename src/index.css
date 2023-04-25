@@ -13,7 +13,8 @@ code {
 }
 
 :root {
-	--primaryColor: rgb(154, 65, 222);
-	--secondaryColor: black;
+	--primaryColor: rgb(2, 2, 2);
+	--secondaryColor: rgb(250, 102, 137);
 	--textColor: white;
+  background-color: #454545;
 }

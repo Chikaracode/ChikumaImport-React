@@ -1,12 +1,20 @@
+
+import ItemCard from "./ItemCard"
 import styles from "./ItemList.module.css"
 
-const ItemList = ({saludo}) => {
-  return (
-    <div  className={styles.text}>
-       <h2>{saludo}</h2> 
-       
-    </div>
-  )
-}
+const ItemList = ({items}) => {
 
-export default ItemList  
+  return (
+    <div  className={styles.cards}>
+      {
+        items.map( (item) => {
+        return (
+        <ItemCard item={item}  key={item.id}/>
+        );
+       })}
+     
+    </div>
+  )  
+}  
+
+export default ItemList
