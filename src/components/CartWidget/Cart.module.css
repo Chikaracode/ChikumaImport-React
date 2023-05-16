@@ -1,8 +1,20 @@
 .contenCart{
+    width: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     position: relative;
+    color: white;
 }
 
 .countCart{
+    width: 30px;
+    height: 45px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     position: absolute;
-    left: 23px;
+    left: 63px;
+    
+    
 }

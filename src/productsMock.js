@@ -41,6 +41,7 @@ export let products = [
     id: 5,
     titulo: "Peluche Kawaii",
     precio: 30,
+    stock: 20,
     categoria: "Kawaii",
     descripcion: "Peluche hipoalergénico de 40cm.",
     imagen:
@@ -60,7 +61,7 @@ export let products = [
     id: 7,
     titulo: "Aspiradora robot",
     precio: 200,
-    stock: 10,
+    stock: 2,
     descripcion: "Una pequeña aspiradora robot que se pasea por el piso de tu casa aspsirando el polvo y suciedad del piso.",
     categoria: "Tecnologia",
     imagen:

@@ -1,7 +1,9 @@
 import ItemList from "./ItemList"
-import { products } from "../../productsMock"
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import { BounceLoader } from "react-spinners";
+import { db } from "../../firebaseConfig";
+import {getDocs, collection, query, where} from "firebase/firestore"
 
 const ItemListContainer = () => {
 
@@ -13,21 +15,36 @@ const ItemListContainer = () => {
 
   useEffect( ()=>{
 
-    const productsFiltered = products.filter( prod => prod.categoria === nombreCategoria)
+  // const itemCollection = collection( db, "products" )
 
-    const task = new Promise((resolve, reject)=>{
-    
-      resolve( nombreCategoria ? productsFiltered : products );
-  
-    });
-  
-    task
-    .then( (res)=> setItems(res) )
-    .catch( (error)=> console.log("catch: ", error) );
+  const itemCollection = collection(db, "products")
+  const q = query(itemCollection, where("categoria", "==", nombreCategoria))
+
+
+  getDocs(q)
+  .then(res => {
+    const products = res.docs.map(product => {
+      
+      return {
+        ...product.data(),
+        id: product.id
+      }
+    })
+
+    setItems(products)
+  }) 
+  .catch(err => console.log(err)); 
 
   },[nombreCategoria]);
 
-  
+
+  if(items.length === 0){
+    
+    return <div style={{display: "flex", justifyContent: "center", marginTop: "250px"}}>
+      <BounceLoader color="#de4e7e" size={300} />
+    </div>
+  }
+
 
   return (
     <div>

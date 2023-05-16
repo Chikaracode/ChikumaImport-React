@@ -5,6 +5,7 @@ import {Outlet, Link} from "react-router-dom"
 import CartWidget from "../CartWidget/CartWidget";
 import "./Navbar.css"
 
+
 const Navbar = () => {
  
 const navRef = useRef();
@@ -32,7 +33,9 @@ const showNavbar = () => {
         <TiTimes size={20}/>
       </button>
       </nav>
-      <CartWidget />
+
+      <CartWidget /> 
+      
       <button className="nav-btn" onClick={showNavbar} >
         <FaBars size={20}/>
       </button>
@@ -45,3 +48,4 @@ const showNavbar = () => {
 }
 
 export default Navbar
+

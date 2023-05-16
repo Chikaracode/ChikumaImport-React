@@ -1,11 +1,11 @@
 import { Box, Button, Grid } from "@mui/material"
-import useCounter from "../../utils/hooks/useCounter"
 import styles  from "./ItemDetail.module.css"
+import CounterContainer from "../Counter/CounterContainer"
+import { Link } from "react-router-dom"
 
-
-const ItemDetail = ({product}) => {
+const ItemDetail = ({product, onAdd, cantidadTotal}) => {
   
-  const {counter, increment, decrement} = useCounter(0)
+ 
 
   return (
   <Box  className={styles.content}>
@@ -18,17 +18,14 @@ const ItemDetail = ({product}) => {
       <h2>{product.descripcion}</h2>
       <h1>S/.{product.precio}</h1>
 
-      <div className={styles.btns}>
-       <button className={styles.btn1} onClick={decrement}>-</button>
-       <span className={styles.counter}>{counter}</span>
-       <button className={styles.btn2} onClick={increment}>+</button>
-      </div>
-      
+      <CounterContainer stock={product.stock} onAdd={onAdd} initial={cantidadTotal} /> 
       <div className={styles.contentBtn}>
       <Button variant="contained" color="info" >Comprar ahora</Button>
-      <Button variant="contained" color="success" >Añadir al carrito</Button>
+      <Link to="/">
+      <Button variant="contained" color="secondary">Regresar</Button>
+      </Link>
       </div>
-
+      
       </Grid>
     </Grid>
   </Box>

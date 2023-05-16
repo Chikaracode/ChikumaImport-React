@@ -1,43 +1,36 @@
-import {useState} from "react"
+import { useEffect, useState } from "react";
 import CounterPresentation from "./CounterPresentation"
 
-const Counter = () => {
+const CounterContainer = ({stock, onAdd, initial=1 }) => {
 
-const [counter, setCounter] = useState(0)
-const [user, setUser] = useState("")
+   const [counter, setCounter] = useState(initial);
 
-const sumar = () => {
-  setCounter(counter + 1)
-}
+  useEffect(()=>{
+    setCounter(initial)
+  }, [initial]) 
 
-const restar = () => {
-   setCounter(counter - 1)
- }
+   const sumar = () =>{
+    if(counter < stock){
+      
+      setCounter(counter + 1);
+    }else{
+      alert("Stock agotado")
+    }
+   };
 
-const sumar10 = () => {
-  setCounter(counter + 10)
-}
+   const restar = () => {
+    if(counter > 1){
+      setCounter(counter - 1);
+    }
+   }
 
-const reiniciar = () => {
-  setCounter(0)
-}
-
-const login = () =>{
-  setUser('Jungkook')
-}
-
-  return (
+   return (
+   
     <div>
-      <CounterPresentation 
-      sumar={sumar} 
-      restar={restar} 
-      counter={counter}
-      sumar10={sumar10} 
-      reiniciar={reiniciar} 
-      login={login} 
-      user={user} />
+      <CounterPresentation counter={counter} sumar={sumar} restar={restar} onAdd={onAdd} />
     </div>
   )
 }
 
-export default Counter
+export default CounterContainer
+
