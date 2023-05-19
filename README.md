@@ -24,4 +24,4 @@ git clone https://github.com/Chikaracode/ChikumaImport-React.git
                  REACT_APP_MESSAGINGSENDERID=
                  REACT_APP_APPID=
 
-[Mira el proyecto](vercel.com)
+[Mira el proyecto](https://chikuma-import-r.vercel.app/)
