@@ -5,6 +5,7 @@ import ItemDetailContainer from "./components/ItemDetail/ItemDetailContainer";
 import CartContainer from "./components/Cart/CartContainer";
 import Form from "./components/Form/Form";
 import CartContextProvider from "./context/CartContext";
+import FormCheckoutContainer from "./components/FormCheckout/FormCheckoutContainer";
 
 
 function App() {
@@ -24,6 +25,9 @@ function App() {
         <Route path="/cart" element={ <CartContainer />}  />
 
         <Route path="/form" element={<Form />} />
+
+        <Route path="/checkout" element={<FormCheckoutContainer/>} />
+
 
         <Route path="/sign-up" element={<h1>Acá deberías registrarte</h1>}/>
 

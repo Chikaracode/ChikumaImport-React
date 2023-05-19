@@ -17,10 +17,14 @@ const ItemDetail = ({product, onAdd, cantidadTotal}) => {
       <h2>{product.titulo}</h2>
       <h2>{product.descripcion}</h2>
       <h1>S/.{product.precio}</h1>
-
-      <CounterContainer stock={product.stock} onAdd={onAdd} initial={cantidadTotal} /> 
+      {
+        product.stock > 0 ?
+       <CounterContainer stock={product.stock} onAdd={onAdd} initial={cantidadTotal} /> : <h2>"No hay stock"</h2> 
+      }
       <div className={styles.contentBtn}>
+        <Link to="/cart">
       <Button variant="contained" color="info" >Comprar ahora</Button>
+        </Link>
       <Link to="/">
       <Button variant="contained" color="secondary">Regresar</Button>
       </Link>

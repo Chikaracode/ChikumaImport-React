@@ -3,7 +3,7 @@ import "./Cart.css";
 import { Link } from "react-router-dom";
 
 
-const Cart = ({cart, clearCartAlert, deleteProductById, total}) => {
+const Cart = ({cart, clearCartAlert, deleteProductById, total, navigate}) => {
 
   
   return (
@@ -37,7 +37,7 @@ const Cart = ({cart, clearCartAlert, deleteProductById, total}) => {
             <h3>Precio final: </h3>
     
           <div className="btn-cart">
-            <Button >Finalizar Compra</Button>
+            <Button onClick={()=>navigate("/checkout")} >Finalizar Compra</Button>
             <Button onClick={clearCartAlert} >vaciar el carrito</Button>
     
           </div>

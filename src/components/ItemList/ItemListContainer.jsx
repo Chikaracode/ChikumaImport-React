@@ -11,22 +11,22 @@ import {getDocs, collection, query, where} from "firebase/firestore"
     const { nombreCategoria } = useParams();
   
     useEffect(() => {
-      const itemCollection = collection(db, "products");
-      let q;
+      const itemCollection = collection(db, "products ");
+      let consulta;
   
       if (nombreCategoria) {
-        q = query(itemCollection, where("categoria", "==", nombreCategoria));
+        consulta = query(itemCollection, where("categoria", "==", nombreCategoria));
       } else {
-        q = itemCollection; // Sin filtro si no hay categoría
+        consulta = itemCollection; // Sin filtro si no hay categoría
       }
   
-      getDocs(q)
+      getDocs(consulta)
         .then((res) => {
           const products = res.docs.map((product) => ({
             ...product.data(),
             id: product.id,
           }));
-          setItems(products);
+          setItems(products );
         })
         .catch((err) => console.log(err));
     }, [nombreCategoria]);
