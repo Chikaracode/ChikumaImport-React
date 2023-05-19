@@ -16,4 +16,12 @@ git clone https://github.com/Chikaracode/ChikumaImport-React.git
 - SweetAlert2 
 - MUI
 
+### Si deseas usar este proyecto, necesitas las siguientes variables de entorno, pero antes debes crear el archivo .env y asignarle lo siguiente:
+                 REACT_APP_APIKEY=
+                 REACT_APP_AUTHDOMAIN=
+                 REACT_APP_PROJECTID=
+                 REACT_APP_STORAGEBUCKET=
+                 REACT_APP_MESSAGINGSENDERID=
+                 REACT_APP_APPID=
+
 [Mira el proyecto](vercel.com)
