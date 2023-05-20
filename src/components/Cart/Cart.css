@@ -68,3 +68,7 @@
 .cart-item-info > h2 {
     font-family: monospace;
 }
+
+.message-empty{
+    text-align: center;
+}

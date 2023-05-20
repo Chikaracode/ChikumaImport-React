@@ -1,6 +1,7 @@
-import { Button } from "@mui/material"
+import {  Button } from "@mui/material"
 import "./Cart.css";
 import { Link } from "react-router-dom";
+
 
 
 const Cart = ({cart, clearCartAlert, deleteProductById, total, navigate}) => {
@@ -49,8 +50,9 @@ const Cart = ({cart, clearCartAlert, deleteProductById, total, navigate}) => {
           </div>
         </div>
         </div>
-      ): <div>
-        <h1>El carrito esta vacío</h1>
+      ): <div className="message-empty">
+        <h1>El carrito esta vacío</h1> 
+    
         <Link to="/">
         <Button>Añadir productos</Button>
         </Link>
@@ -60,3 +62,4 @@ const Cart = ({cart, clearCartAlert, deleteProductById, total, navigate}) => {
 }
 
 export default Cart
+
